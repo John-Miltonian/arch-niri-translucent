@@ -1,0 +1,84 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "color": {
+            "1": "red",
+            "2": "yellow"
+        }
+    },
+    "display": {
+        "separator": "  ",
+        "color": "yellow"
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "{#31}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+        },
+        {
+            "type": "title",
+            "key": "{#37}✝  User",
+            "format": "{user-name}@{host-name}"
+        },
+        {
+            "type": "custom",
+            "format": "{#31}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"
+        },
+        {
+            "type": "os",
+            "key": "{#33}✝  OS",
+            "format": "{3}"
+        },
+        {
+            "type": "kernel",
+            "key": "{#34}✝  Kernel",
+            "format": "{2}"
+        },
+        {
+            "type": "packages",
+            "key": "{#35}✝  Packages"
+        },
+        {
+            "type": "shell",
+            "key": "{#36}✝  Shell"
+        },
+        {
+            "type": "wm",
+            "key": "{#37}✝  WM",
+            "format": "Niri"
+        },
+        {
+            "type": "terminal",
+            "key": "{#33}✝  Terminal"
+        },
+        {
+            "type": "cpu",
+            "key": "{#34}✝  CPU"
+        },
+        {
+            "type": "memory",
+            "key": "{#35}✝  Memory"
+        },
+        {
+            "type": "disk",
+            "key": "{#36}✝  Disk"
+        },
+        {
+            "type": "uptime",
+            "key": "{#37}✝  Uptime"
+        },
+        {
+            "type": "custom",
+            "format": "{#31}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫"
+        },
+        {
+            "type": "custom",
+            "format": "{#33}  ✝ John 14:6 - I am the way, the truth, and the life"
+        },
+        {
+            "type": "custom",
+            "format": "{#31}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+        }
+    ]
+}

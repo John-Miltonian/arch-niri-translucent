@@ -1,0 +1,211 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   WAYBAR STYLE
+   Dark Mode + Transparent
+   Christian Aesthetic
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   GLOBAL
+   ─────────────────────────────────────────────────────────────────────────────── */
+* {
+    font-family: "JetBrains Mono Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    /* Dark translucent background */
+    background-color: rgba(10, 10, 10, 0.75);
+    border: 1px solid rgba(139, 0, 0, 0.5);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    color: #d4c4a8;
+    transition: background-color 0.3s ease;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   WORKSPACES
+   ─────────────────────────────────────────────────────────────────────────────── */
+#custom-workspaces {
+    margin: 4px 0;
+    padding: 0 12px;
+    background: rgba(139, 0, 0, 0.2);
+    border-radius: 6px;
+    color: #d4c4a8;
+    font-weight: bold;
+}
+
+#custom-workspaces:hover {
+    background: rgba(139, 0, 0, 0.3);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   WINDOW TITLE
+   ─────────────────────────────────────────────────────────────────────────────── */
+#custom-window {
+    margin: 4px 8px;
+    padding: 0 12px;
+    background: transparent;
+    color: #b8860b;
+    font-weight: normal;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   BIBLE VERSE - Centerpiece
+   ─────────────────────────────────────────────────────────────────────────────── */
+#custom-bible-verse {
+    margin: 4px 12px;
+    padding: 0 16px;
+    background: rgba(74, 25, 66, 0.4);
+    border: 1px solid rgba(184, 134, 11, 0.3);
+    border-radius: 8px;
+    color: #d4c4a8;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#custom-bible-verse:hover {
+    background: rgba(74, 25, 66, 0.6);
+    border-color: rgba(184, 134, 11, 0.5);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   MODULES RIGHT
+   ─────────────────────────────────────────────────────────────────────────────── */
+#tray {
+    margin: 4px 4px;
+    padding: 0 8px;
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 6px;
+}
+
+#custom-clipboard {
+    margin: 4px 2px;
+    padding: 0 8px;
+    background: rgba(139, 0, 0, 0.2);
+    border-radius: 6px;
+    color: #d4c4a8;
+}
+
+#custom-clipboard:hover {
+    background: rgba(139, 0, 0, 0.4);
+    color: #b8860b;
+}
+
+#pulseaudio {
+    margin: 4px 2px;
+    padding: 0 10px;
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 6px;
+    color: #d4c4a8;
+}
+
+#pulseaudio.muted {
+    color: #8b0000;
+}
+
+#pulseaudio:hover {
+    background: rgba(139, 0, 0, 0.3);
+}
+
+#network {
+    margin: 4px 2px;
+    padding: 0 10px;
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 6px;
+    color: #d4c4a8;
+}
+
+#network.disconnected {
+    color: #8b0000;
+}
+
+#network:hover {
+    background: rgba(139, 0, 0, 0.3);
+}
+
+#cpu {
+    margin: 4px 2px;
+    padding: 0 10px;
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 6px;
+    color: #b8860b;
+}
+
+#cpu:hover {
+    background: rgba(139, 0, 0, 0.3);
+}
+
+#memory {
+    margin: 4px 2px;
+    padding: 0 10px;
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 6px;
+    color: #d4c4a8;
+}
+
+#memory:hover {
+    background: rgba(139, 0, 0, 0.3);
+}
+
+#battery {
+    margin: 4px 2px;
+    padding: 0 10px;
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 6px;
+    color: #d4c4a8;
+}
+
+#battery.charging {
+    color: #4a7c59;
+}
+
+#battery.warning {
+    color: #b8860b;
+}
+
+#battery.critical {
+    color: #8b0000;
+    animation: blink 1s linear infinite;
+}
+
+#clock {
+    margin: 4px 4px 4px 2px;
+    padding: 0 12px;
+    background: rgba(139, 0, 0, 0.2);
+    border-radius: 6px;
+    color: #d4c4a8;
+    font-weight: bold;
+}
+
+#clock:hover {
+    background: rgba(139, 0, 0, 0.4);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   TOOLTIP
+   ─────────────────────────────────────────────────────────────────────────────── */
+tooltip {
+    background: rgba(10, 10, 10, 0.95);
+    border: 1px solid rgba(139, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+tooltip label {
+    color: #d4c4a8;
+    font-size: 12px;
+}
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   ANIMATIONS
+   ─────────────────────────────────────────────────────────────────────────────── */
+@keyframes blink {
+    to {
+        color: #d4c4a8;
+    }
+}

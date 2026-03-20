@@ -1,0 +1,72 @@
+# ═══════════════════════════════════════════════════════════════════════════════
+#   SWAYLOCK CONFIGURATION
+#   Lock Screen - Dark Mode
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ───────────────────────────────────────────────────────────────────────────────
+#   GENERAL SETTINGS
+# ───────────────────────────────────────────────────────────────────────────────
+show-caps-lock-indicator
+show-keyboard-layout
+ignore-inhibit
+
+# ───────────────────────────────────────────────────────────────────────────────
+#   APPEARANCE - Dark Theme
+# ───────────────────────────────────────────────────────────────────────────────
+
+# Background (dark semi-transparent)
+# Can be overridden with --screenshot and --effect-blur
+
+# Text colors
+text-color=d4c4a8
+
+# Inside the indicator (password typing area)
+inside-color=0a0a0acc
+inside-clear-color=0a0a0acc
+inside-ver-color=4a1942cc
+inside-wrong-color=8b0000cc
+
+# Ring colors (outer circle)
+ring-color=8b0000ff
+ring-clear-color=b8860bff
+ring-ver-color=4a1942ff
+ring-wrong-color=ff0000ff
+
+# Line color (between ring and inside)
+line-color=00000000
+line-clear-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+
+# Separator color
+separator-color=00000000
+
+# Layout color
+layout-bg-color=0a0a0aee
+layout-text-color=d4c4a8
+
+# ───────────────────────────────────────────────────────────────────────────────
+#   KEYBOARD LAYOUT
+# ───────────────────────────────────────────────────────────────────────────────
+key-hl-color=d4c4a8ff
+bs-hl-color=8b0000ff
+
+# ───────────────────────────────────────────────────────────────────────────────
+#   INDICATOR
+# ───────────────────────────────────────────────────────────────────────────────
+indicator-radius=100
+indicator-thickness=10
+
+# ───────────────────────────────────────────────────────────────────────────────
+#   FONT
+# ───────────────────────────────────────────────────────────────────────────────
+font=JetBrains Mono Nerd Font
+font-size=24
+
+# ───────────────────────────────────────────────────────────────────────────────
+#   MISC
+# ───────────────────────────────────────────────────────────────────────────────
+indicator-idle-visible
+grace=2
+grace-no-mouse
+grace-no-touch

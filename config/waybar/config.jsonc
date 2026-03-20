@@ -1,0 +1,156 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "margin-top": 6,
+    "margin-left": 8,
+    "margin-right": 8,
+    
+    "modules-left": [
+        "custom/workspaces",
+        "custom/window"
+    ],
+    
+    "modules-center": [
+        "custom/bible-verse"
+    ],
+    
+    "modules-right": [
+        "tray",
+        "custom/clipboard",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+        "battery",
+        "clock"
+    ],
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // WORKSPACES - Biblical Names
+    // ═══════════════════════════════════════════════════════════════════════
+    "custom/workspaces": {
+        "exec": "$HOME/.config/waybar/modules/niri-workspaces.sh \"$WAYBAR_OUTPUT_NAME\"",
+        "interval": 1,
+        "signal": 8,
+        "tooltip": false
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // WINDOW TITLE
+    // ═══════════════════════════════════════════════════════════════════════
+    "custom/window": {
+        "exec": "$HOME/.config/waybar/modules/niri-window.sh",
+        "interval": 1,
+        "max-length": 60
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // BIBLE VERSE - Daily Scripture
+    // ═══════════════════════════════════════════════════════════════════════
+    "custom/bible-verse": {
+        "exec": "$HOME/.config/waybar/modules/bible-verse.sh",
+        "interval": 1800,
+        "signal": 10,
+        "format": "{}",
+        "tooltip": true,
+        "tooltip-format": "📖 Daily Scripture",
+        "max-length": 80
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // CLIPBOARD
+    // ═══════════════════════════════════════════════════════════════════════
+    "custom/clipboard": {
+        "format": " ",
+        "on-click": "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy",
+        "tooltip": false
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // SYSTEM TRAY
+    // ═══════════════════════════════════════════════════════════════════════
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // PULSEAUDIO
+    // ═══════════════════════════════════════════════════════════════════════
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " {volume}%",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "tooltip-format": "{desc}"
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // NETWORK
+    // ═══════════════════════════════════════════════════════════════════════
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ipaddr}",
+        "format-disconnected": "󰤭 ",
+        "tooltip-format-wifi": "Signal: {signalStrength}%\nIP: {ipaddr}",
+        "tooltip-format-ethernet": "IP: {ipaddr}/{cidr}",
+        "max-length": 20
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // CPU
+    // ═══════════════════════════════════════════════════════════════════════
+    "cpu": {
+        "interval": 2,
+        "format": " {usage}%",
+        "on-click": "kitty -e htop"
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // MEMORY
+    // ═══════════════════════════════════════════════════════════════════════
+    "memory": {
+        "interval": 5,
+        "format": " {percentage}%",
+        "on-click": "kitty -e htop"
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // BATTERY
+    // ═══════════════════════════════════════════════════════════════════════
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    
+    // ═══════════════════════════════════════════════════════════════════════
+    // CLOCK
+    // ═══════════════════════════════════════════════════════════════════════
+    "clock": {
+        "format": " {:%H:%M}",
+        "format-alt": " {:%Y-%m-%d}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#d4c4a8'><b>{}</b></span>",
+                "weekdays": "<span color='#8b0000'><b>{}</b></span>",
+                "today": "<span color='#b8860b'><b>{}</b></span>"
+            }
+        }
+    }
+}
