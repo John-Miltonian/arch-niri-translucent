@@ -50,7 +50,6 @@ sudo pacman -S --needed --noconfirm \
     fuzzel \
     mako \
     swaylock \
-    wlogout \
     cliphist \
     wl-clipboard \
     swww \
@@ -67,8 +66,7 @@ sudo pacman -S --needed --noconfirm \
 
 # Install optional AUR packages
 echo -e "${GOLD}Installing AUR packages...${NC}"
-yay -S --needed --noconfirm \
-    wlogout 2>/dev/null || true
+yay -S --needed --noconfirm wlogout || echo "wlogout installation skipped (optional)"
 
 # Create directories
 echo -e "${GOLD}Creating directories...${NC}"
@@ -96,16 +94,12 @@ cp -r "$SCRIPT_DIR/scripts/"* ~/.local/bin/
 chmod +x ~/.local/bin/*.sh
 chmod +x ~/.config/waybar/modules/*.sh
 
-# Create a simple dark cross wallpaper (will be replaced by user)
+# Create a simple placeholder wallpaper
 echo -e "${GOLD}Creating placeholder wallpaper...${NC}"
-if command -v convert &> /dev/null; then
-    convert -size 1920x1080 xc:"#0a0a0a" \
-        -stroke "#8b0000" -strokewidth 3 \
-        -draw "line 960,540 960,300" \
-        -draw "line 960,540 960,780" \
-        -draw "line 960,540 720,540" \
-        -draw "line 960,540 1200,540" \
-        ~/.config/wallpapers/cross-dark.png 2>/dev/null || touch ~/.config/wallpapers/cross-dark.png
+if command -v ffmpeg &> /dev/null; then
+    ffmpeg -f lavfi -i "color=c=0x0a0a0a:s=1920x1080" -frames:v 1 ~/.config/wallpapers/cross-dark.png 2>/dev/null || touch ~/.config/wallpapers/cross-dark.png
+elif command -v convert &> /dev/null; then
+    convert -size 1920x1080 xc:"#0a0a0a" ~/.config/wallpapers/cross-dark.png 2>/dev/null || touch ~/.config/wallpapers/cross-dark.png
 else
     touch ~/.config/wallpapers/cross-dark.png
 fi
