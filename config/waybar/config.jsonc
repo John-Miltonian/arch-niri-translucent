@@ -8,8 +8,7 @@
     "margin-right": 8,
     
     "modules-left": [
-        "custom/workspaces",
-        "custom/window"
+        "custom/workspaces"
     ],
     
     "modules-center": [
@@ -18,32 +17,19 @@
     
     "modules-right": [
         "tray",
-        "custom/clipboard",
         "pulseaudio",
         "network",
-        "cpu",
-        "memory",
         "battery",
         "clock"
     ],
     
     // ═══════════════════════════════════════════════════════════════════════
-    // WORKSPACES - Biblical Names
+    // WORKSPACES - Simple circle indicators
     // ═══════════════════════════════════════════════════════════════════════
     "custom/workspaces": {
-        "exec": "$HOME/.config/waybar/modules/niri-workspaces.sh \"$WAYBAR_OUTPUT_NAME\"",
+        "exec": "$HOME/.config/waybar/modules/niri-workspaces.sh",
         "interval": 1,
-        "signal": 8,
         "tooltip": false
-    },
-    
-    // ═══════════════════════════════════════════════════════════════════════
-    // WINDOW TITLE
-    // ═══════════════════════════════════════════════════════════════════════
-    "custom/window": {
-        "exec": "$HOME/.config/waybar/modules/niri-window.sh",
-        "interval": 1,
-        "max-length": 60
     },
     
     // ═══════════════════════════════════════════════════════════════════════
@@ -60,15 +46,6 @@
     },
     
     // ═══════════════════════════════════════════════════════════════════════
-    // CLIPBOARD
-    // ═══════════════════════════════════════════════════════════════════════
-    "custom/clipboard": {
-        "format": " ",
-        "on-click": "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy",
-        "tooltip": false
-    },
-    
-    // ═══════════════════════════════════════════════════════════════════════
     // SYSTEM TRAY
     // ═══════════════════════════════════════════════════════════════════════
     "tray": {
@@ -81,10 +58,10 @@
     // ═══════════════════════════════════════════════════════════════════════
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-muted": " {volume}%",
+        "format-muted": "🔇 {volume}%",
         "format-icons": {
-            "headphone": "",
-            "default": ["", "", ""]
+            "headphone": "🎧",
+            "default": ["🔈", "🔉", "🔊"]
         },
         "on-click": "pavucontrol",
         "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
@@ -95,30 +72,12 @@
     // NETWORK
     // ═══════════════════════════════════════════════════════════════════════
     "network": {
-        "format-wifi": " {essid}",
-        "format-ethernet": " {ipaddr}",
-        "format-disconnected": "󰤭 ",
+        "format-wifi": "📶 {essid}",
+        "format-ethernet": "🔗 {ipaddr}",
+        "format-disconnected": "⚠️ ",
         "tooltip-format-wifi": "Signal: {signalStrength}%\nIP: {ipaddr}",
         "tooltip-format-ethernet": "IP: {ipaddr}/{cidr}",
         "max-length": 20
-    },
-    
-    // ═══════════════════════════════════════════════════════════════════════
-    // CPU
-    // ═══════════════════════════════════════════════════════════════════════
-    "cpu": {
-        "interval": 2,
-        "format": " {usage}%",
-        "on-click": "kitty -e htop"
-    },
-    
-    // ═══════════════════════════════════════════════════════════════════════
-    // MEMORY
-    // ═══════════════════════════════════════════════════════════════════════
-    "memory": {
-        "interval": 5,
-        "format": " {percentage}%",
-        "on-click": "kitty -e htop"
     },
     
     // ═══════════════════════════════════════════════════════════════════════
@@ -130,17 +89,17 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰂄 {capacity}%",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-charging": "🔌 {capacity}%",
+        "format-plugged": "🔌 {capacity}%",
+        "format-icons": ["🪫", "🔋", "🔋", "🔋", "🔋", "🔋", "🔋", "🔋", "🔋", "🔋"]
     },
     
     // ═══════════════════════════════════════════════════════════════════════
     // CLOCK
     // ═══════════════════════════════════════════════════════════════════════
     "clock": {
-        "format": " {:%H:%M}",
-        "format-alt": " {:%Y-%m-%d}",
+        "format": "🕐 {:%H:%M}",
+        "format-alt": "📅 {:%Y-%m-%d}",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
             "mode": "year",

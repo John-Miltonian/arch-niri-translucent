@@ -83,8 +83,9 @@ spawn-at-startup "mako"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
-// Wallpaper (dark christian theme)
-spawn-at-startup "sh" "-c" "swww init && swww img ~/.config/wallpapers/cross-dark.png --transition-type fade"
+// Wallpaper (FIXED - start swww-daemon separately)
+spawn-at-startup "swww-daemon"
+spawn-at-startup "sh" "-c" "sleep 2 && swww img ~/.config/wallpapers/cross-dark.png --transition-type fade"
 
 // ───────────────────────────────────────────────────────────────────────────────
 //   PREFERENCES
